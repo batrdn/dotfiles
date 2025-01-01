@@ -1,0 +1,27 @@
+[include]
+	path = $HOME/.config/delta/catppuccin.gitconfig
+[user]
+	email = baterdene.tsogoo220@gmail.com
+	name = batrdn
+	; gpgSign = true
+; [commit]
+; 	gpgsign = true
+; [tag]
+; 	gpgSign = true
+[pull]
+	rebase = false
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	dark = true
+	features = catppuccin-macchiato
+	syntax-theme = Catppuccin Macchiato
+[rerere]
+	enabled = true
