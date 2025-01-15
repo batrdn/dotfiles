@@ -15,6 +15,7 @@ export FZF_DEFAULT_OPTS=" \
 --multi"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR=nvim
 
 source ~/.config/fzf/fzf-git.sh/fzf-git.sh  
 stty -ixon
@@ -56,5 +57,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"

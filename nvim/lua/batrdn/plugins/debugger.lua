@@ -2,18 +2,7 @@ return {
     'mfussenegger/nvim-dap',
     dependencies = {
         'rcarriga/nvim-dap-ui',
-        'nvim-neotest/nvim-nio',
-        'williamboman/mason.nvim',
         'theHamsta/nvim-dap-virtual-text',
-        'jay-babu/mason-nvim-dap.nvim',
-        {
-            'mxsdev/nvim-dap-vscode-js',
-            dependencies = {
-                'microsoft/vscode-js-debug',
-                version = '1.x',
-                build = 'npm i && npm run compile vsDebugServerBundle && mv dist out',
-            },
-        },
     },
     keys = function(_, keys)
         local dap = require('dap')
@@ -60,18 +49,18 @@ return {
 
         vim.g.dap_virtual_text = true
 
-        require('mason-nvim-dap').setup({
-            automatic_installation = true,
-            handlers = {},
-            ensure_installed = {
-                'js-debug-adapter',
+        require('dap').adapters['pwa-node'] = {
+            type = 'server',
+            host = 'localhost',
+            port = '${port}',
+            executable = {
+                command = 'node',
+                args = {
+                    '/home/bat-erdene/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js',
+                    '${port}',
+                },
             },
-        })
-
-        require('dap-vscode-js').setup({
-            debugger_path = vim.fn.stdpath('data') .. '/lazy/vscode-js-debug',
-            adapters = { 'pwa-node' },
-        })
+        }
 
         local languages = {
             'javascript',
@@ -97,12 +86,15 @@ return {
                     request = 'launch',
                     name = 'Launch Current File (pwa-node with ts-node)',
                     cwd = vim.fn.getcwd(),
-                    runtimeArgs = { '--loader', 'ts-node/esm' },
+                    runtimeArgs = { '-r', 'ts-node/register' },
                     runtimeExecutable = 'node',
-                    args = { '${file}' },
+                    args = { '--inspect', '${file}' },
                     sourceMaps = true,
                     protocol = 'inspector',
-                    skipFiles = { '<node_internals>/**', 'node_modules/**' },
+                    skipFiles = {
+                        '<node_internal>/**',
+                        'node_modules/**',
+                    },
                     resolveSourceMapLocations = {
                         '${workspaceFolder}/**',
                         '!**/node_modules/**',
@@ -115,7 +107,11 @@ return {
                     cwd = vim.fn.getcwd(),
                     runtimeArgs = { '${workspaceFolder}/node_modules/.bin/jest' },
                     runtimeExecutable = 'node',
-                    args = { '${file}', '--coverage', 'false' },
+                    args = {
+                        '${file}',
+                        '--coverage',
+                        'false',
+                    },
                     rootPath = '${workspaceFolder}',
                     sourceMaps = true,
                     console = 'integratedTerminal',

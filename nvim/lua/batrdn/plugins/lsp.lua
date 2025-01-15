@@ -98,6 +98,7 @@ return {
             'stylua', -- Used to format Lua code
             'typescript-language-server',
             'prettier',
+            'js-debug-adapter',
         })
 
         require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
