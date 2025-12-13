@@ -1,7 +1,7 @@
 [include]
 	path = $HOME/.config/delta/catppuccin.gitconfig
 [user]
-	email = baterdene.tsogoo220@gmail.com
+	email = batrdn220@gmail.com
 	name = batrdn
 	; gpgSign = true
 ; [commit]

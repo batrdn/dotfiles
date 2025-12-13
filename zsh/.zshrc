@@ -24,6 +24,8 @@ alias nv="nvim"
 alias c="clear"
 alias cat="bat"
 alias ls="eza"
+alias py="python3"
+alias pip="pip3"
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -57,6 +59,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

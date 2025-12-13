@@ -19,9 +19,6 @@ return {
         build = ':TSUpdate',
         opts = {
             ensure_installed = {
-                'c',
-                'cpp',
-                'zig',
                 'go',
                 'rust',
                 'jsdoc',
@@ -40,8 +37,6 @@ return {
                 'json',
                 'markdown',
                 'dockerfile',
-                'cmake',
-                'graphql',
             },
             auto_install = true,
             highlight = {

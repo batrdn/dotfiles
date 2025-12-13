@@ -6,8 +6,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Copy to clipboard
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Copy to clipboard' })
-vim.keymap.set('n', '<leader>Y', '"+yg_', { desc = 'Copy line to clipboard without newline' })
 vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Copy to clipboard' })
+vim.keymap.set('n', '<leader>Y', '"+yg_', { desc = 'Copy line to clipboard without newline' })
 vim.keymap.set('n', '<leader>yy', '"+yy', { desc = 'Copy current line to clipboard' })
 
 -- Paste from clipboard
@@ -17,12 +17,12 @@ vim.keymap.set('v', '<leader>p', '"+p', { desc = 'Paste from clipboard' })
 vim.keymap.set('v', '<leader>P', '"+P', { desc = 'Paste from clipboard before the cursor' })
 
 -- Map Ctrl-Up to move the current line up
-vim.api.nvim_set_keymap('n', '<M-Up>', ':m -2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<M-Up>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-Up>', ':m -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-Up>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- Map Ctrl-Down to move the current line down
-vim.api.nvim_set_keymap('n', '<M-Down>', ':m +1<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<M-Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-Down>', ':m +1<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
 -- Diagnostics
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

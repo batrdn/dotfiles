@@ -1,6 +1,8 @@
 return {
     'folke/trouble.nvim',
-    opts = {},
+    opts = {
+        auto_open = true,
+    },
     cmd = 'Trouble',
     keys = {
         {

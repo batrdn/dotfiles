@@ -8,6 +8,9 @@ return {
             background = {
                 dark = 'macchiato',
             },
+            no_italic = true, 
+            no_bold = true,
+            no_underline = false,
             integrations = {
                 aerial = true,
                 harpoon = true,
