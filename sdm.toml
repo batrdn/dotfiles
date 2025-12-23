@@ -1,0 +1,10 @@
+[dotfiles]
+bat = "~/.config/bat"
+delta = "~/.config/delta"
+lazydocker = "~/.config/lazydocker"
+lazygit = "~/.config/lazygit"
+nvim = "~/.config/nvim"
+starship = "~/.config/starship"
+tmux = "~/.config/tmux"
+"zsh/.zshrc" = "~/.zshrc"
+"git/.gitconfig" = "~/.gitconfig"

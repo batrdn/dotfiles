@@ -17,9 +17,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
 
-source ~/.config/fzf/fzf-git.sh/fzf-git.sh  
-stty -ixon
-
 alias nv="nvim"
 alias c="clear"
 alias cat="bat"

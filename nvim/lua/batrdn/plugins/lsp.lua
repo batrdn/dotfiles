@@ -84,6 +84,11 @@ return {
                     },
                 },
                 rust_analyzer = {},
+                basedpyright = {
+                    analysis = {
+                        diagnosticMode = 'openFilesOnly',
+                    },
+                },
             }
 
             require('mason').setup()
@@ -95,6 +100,7 @@ return {
                 'js-debug-adapter',
                 'gopls',
                 'rust_analyzer',
+                'basedpyright',
             })
 
             require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
