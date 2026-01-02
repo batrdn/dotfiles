@@ -34,3 +34,8 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>bp', ':bp<CR>', { desc = 'Go to [P]revious [B]uffer' })
 vim.keymap.set('n', '<leader>bn', ':bn<CR>', { desc = 'Go to [N]ext [B]uffer' })
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Delete [B]uffer' })
+
+-- VSCode formatter
+if vim.g.vscode then
+    vim.keymap.set('n', '<leader>f', '<Cmd>call VSCodeNotify("editor.action.formatDocument")<CR>', { desc = '[F]ormat document' })
+end

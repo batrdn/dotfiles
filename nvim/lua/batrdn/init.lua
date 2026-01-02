@@ -1,4 +1,8 @@
-require('batrdn.options')
 require('batrdn.keymaps')
-require('batrdn.autocmds')
-require('batrdn.lazy')
+if vim.g.vscode then
+    -- VSCode extension
+else
+    require('batrdn.autocmds')
+    require('batrdn.lazy')
+    require('batrdn.options')
+end
