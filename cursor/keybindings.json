@@ -1,0 +1,22 @@
+[
+  {
+    "key": "] d",
+    "command": "editor.action.marker.next",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "[ d",
+    "command": "editor.action.marker.prev",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "] c",
+    "command": "workbench.action.editor.nextChange",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "[ c",
+    "command": "workbench.action.editor.previousChange",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  }
+]
