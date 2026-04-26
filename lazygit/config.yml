@@ -2,7 +2,7 @@ os:
   editCommand: "nvim"
   editCommandTemplate: "{{editor}} {{filename}}"
 gui:
-  showIcons: true
+  showIcons: false
   showFileTree: true
   theme:
     activeBorderColor:
@@ -29,6 +29,6 @@ gui:
     '*': '#b7bdf8'
 
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - pager: delta --dark --paging=never
+      colorArg: always
