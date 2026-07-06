@@ -10,7 +10,14 @@ return {
             },
             view_options = {
                 show_hidden = true,
-                -- TODO: define always hidden
+                is_always_hidden = function(name, _)
+                    local always_hidden = {
+                        ['..'] = true,
+                        ['.git'] = true,
+                        ['.DS_Store'] = true,
+                    }
+                    return always_hidden[name] == true
+                end,
             },
         })
 
